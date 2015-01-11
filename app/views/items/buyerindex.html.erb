@@ -1,0 +1,41 @@
+
+<div class="bill"></div>
+  
+<div class="login">
+  <%= form_for :login, url: '/login' do |f| %>
+
+    <%= f.label :username %> 
+    <%= f.text_field :username %>
+    <%= f.label :password %> 
+    <%= f.password_field :password %>
+    <%= f.submit 'Log In' %>
+  <% end %>
+</div>
+<h3 id="tenstore">The Ten Dollar Store </h3>
+
+<%= form_tag({controller: "items", action: "index"}, method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q, nil, :size=>100) %>
+    <%= submit_tag("Search") %>
+<% end %>
+<h4 id="search-msg">Leave search box empty and press <b>Search</b> to display all items for sale.</h4>
+
+<h3 id="title">Items for Sale:</h3>
+
+
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      
+      <b>Price:</b> <%= number_to_currency(item.price) %>
+      <div class="item-width"><b>Item Tag:</b> <%= link_to item.item_tag, item %> </div>
+      <div class="item-width"><b>description:</b> <%= item.description %> <br></div>
+      
+      <b>Shipping Cost:</b> <%= number_to_currency(item.shipping_cost) %><br><br>
+      <% if item.image.url != nil %>
+          <%= image_tag item.image.url, size: "100x100"%><br><br>
+      <% end %>
+    </li><br>
+  <% end %>
+</ul>

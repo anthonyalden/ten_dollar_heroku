@@ -1,0 +1,33 @@
+<div class="bill"></div>
+
+<h3 id="tenstore">The Ten Dollar Store </h3>
+
+
+
+<% if @seller.items.length > 1 %>
+		<h3><p>These are <b><%= @seller.first_name %> <%= @seller.last_name %>'s</b> Items for Sale:</p></h3>
+<% end %>
+
+<% if @seller.items.length == 1 %>
+	  	<h3><p>These is <b><%= @seller.first_name %> <%= @seller.last_name %>'s</b> Item for Sale:</p></h3>
+<% end %>
+
+<% if @seller.items.length == 0 %>
+		<h3><p> <b><%= @seller.first_name %> <%= @seller.last_name %></b> Has No Items for Sale:</p></h3>
+<% end %>
+
+<ul>
+	<% @seller.items.each do |item| %>
+		<li>
+		<%= link_to item.item_tag, item %>
+		<%= item.description %> (<%= link_to "Edit", edit_item_path(item) %>)
+			
+		</li>
+	<% end %>
+</ul>
+
+<nav>
+  
+  
+  <%= link_to "Display All Items", items_path, {:style=>'color:black;', :class => "css_class"} %>
+</nav>

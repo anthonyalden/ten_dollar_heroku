@@ -1,0 +1,23 @@
+<% if logged_in? %>
+	<nav>
+	  <%= link_to "Edit Account", edit_seller_path(current_user) %>
+	  <%= link_to "Display All Items", items_path %>
+	  <%= link_to "Seller's Items", current_user %>
+	  <%= link_to "New Item", new_item_path %>
+	</nav>
+<%end %>
+
+<% if logged_in? == false %>
+	<nav>
+	  <%= link_to "Create Account", new_seller_path %>
+	  <%= link_to "All Items", items_path %>
+	</nav>
+<% end %>
+
+<% if logged_in? %>
+    <%= button_to "Log Out", logout_path , method: 'delete'%>
+<% end %>
+
+
+
+

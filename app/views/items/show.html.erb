@@ -1,0 +1,14 @@
+<div class="bill"></div>
+
+<h3 id="tenstore">The Ten Dollar Store </h3>
+<h2 id="title"><%= @item.item_tag %></h2><br><br>
+<%= image_tag @item.image.url %><br>
+<p>
+	<b>Price:</b> <%= number_to_currency(@item.price) %><br><br>
+	<div class="item-width"><b>Item:</b> <%=@item.item_tag %><br><br> </div>
+	<div class="item-width"><b>Description:</b> <%=@item.description%> <br><br></div>
+	<b>Shipping Cost:</b><%= number_to_currency(@item.shipping_cost) %> </p>
+</p>
+
+<%= link_to "Return to Items List", items_path, {:style=>'color:red;', :class => "css_class"} %>
+

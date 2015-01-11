@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_tag: MyString
+  description: MyString
+  photo: MyString
+  category: MyString
+  search_tags: MyString
+  shipping_cost: 1.5
+  sold: false
+  belongs_to: 
+
+two:
+  item_tag: MyString
+  description: MyString
+  photo: MyString
+  category: MyString
+  search_tags: MyString
+  shipping_cost: 1.5
+  sold: false
+  belongs_to: 
