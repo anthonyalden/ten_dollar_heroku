@@ -7,10 +7,10 @@ class Seller
   field :phone, type: String
   field :email, type: String
   has_many :items
-  validates_uniqueness_of :username
+  # validates_uniqueness_of :username  case_sensitive: false
   attr_reader :password 
 
-  validates :username, presence: true, length: {in: 6..20 }#, message: "User Name Must be Between 6 and 20 Character in Length and Must Have a Value Entered."
+  validates :username, presence: true, uniqueness:  {case_sensitive: false}, length: {in: 6..20 }#, message: "User Name Must be Between 6 and 20 Character in Length and Must Have a Value Entered."
   validates :password, presence: true, length: {in: 6..20 }#, message: "Password Must be Between 6 and 20 Character in Length and Must Have a Value Entered."
   validates :first_name, presence: true#, message: "First Name Must Have a Value Entered."
   validates :last_name, presence: true#, message: "Last Name Must Have a Value Entered."

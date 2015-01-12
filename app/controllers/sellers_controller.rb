@@ -24,6 +24,7 @@ class SellersController < ApplicationController
 		#the params object has some methods like .requre and .permit.  The permit says what attributes can be saved
 		# :seller is from the model
 				@seller = Seller.new (seller_params)
+				@seller.username = @seller.username.downcase
 				if @seller.save 
 					# if save is ok go back to index.html
 					flash[:notice] = nil
@@ -47,7 +48,7 @@ class SellersController < ApplicationController
 	def update
 		# this retrieves a specific seller from database
 		@seller = Seller.find(params[:id])
-
+		@seller.username = @seller.username.downcase
 		if @seller.update_attributes(seller_params)
 			redirect_to items_path
 		else

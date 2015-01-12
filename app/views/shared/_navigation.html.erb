@@ -1,21 +1,22 @@
 <% if logged_in? %>
-	<nav>
-	  <%= link_to "Edit Account", edit_seller_path(current_user) %>
-	  <%= link_to "Display All Seller Items", items_path %>
-	  <%= link_to "Seller's Items Listing", current_user %>
-	  <%= link_to "New Item", new_item_path %>
-	</nav>
+	<nav class="menu">
+	  <%= link_to "Edit Account", edit_seller_path(current_user), class: "menu-item" %>
+	  <%= link_to "Display All Seller Items", items_path, class: "menu-item" %>
+	  <%= link_to "Seller's Items Listing", current_user, class: "menu-item" %>
+	  <%= link_to "New Item", new_item_path,class:"menu-item" %>
+	  <%= link_to "Log Out", logout_path , method: 'delete', class: "menu-item" %>
+	</nav><br>
 <%end %>
 
 <% if logged_in? == false %>
-	<nav>
-	  <%= link_to "Create Account", new_seller_path %>
-	  <%= link_to "All Items", items_path %>
-	</nav>
+	<nav class="menu">
+	  <%= link_to "Create Account", new_seller_path, class: "menu-item"%>
+	  <%= link_to "All Items", items_path, class: "menu-item" %>
+	</nav><br>
 <% end %>
 
 <% if logged_in? %>
-    <%= button_to "Log Out", logout_path , method: 'delete'%>
+    
 <% end %>
 
 
