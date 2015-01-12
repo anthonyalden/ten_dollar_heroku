@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
 
 	      
 		  if logged_in? == false
-		  	@items = Item.where(:description => /.*#{params[:q]}.*/i)
+		  	@items = Item.where({ :$or => [ { :description => /.*#{params[:q]}.*/i }, { :item_tag => /.*#{params[:q]}.*/i } ] })
 		  	render "buyerindex"
 		  else
 		  	# @items = current_user.items.where(:description => /.*#{params[:q]}.*/i $or :item_tag => /.*#{params[:q]}.*/i)
