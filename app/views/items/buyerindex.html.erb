@@ -34,7 +34,7 @@
       
       <b>Shipping Cost:</b> <%= number_to_currency(item.shipping_cost) %><br><br>
       <% if item.image.url != nil %>
-          <%= image_tag item.image.url, size: "100x100"%><br><br>
+          <%= image_tag item.image.url, size: "100x75"%><br><br>
       <% end %>
     </li><br>
   <% end %>
