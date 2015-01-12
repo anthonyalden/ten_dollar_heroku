@@ -27,7 +27,8 @@ class SellersController < ApplicationController
 				if @seller.save 
 					# if save is ok go back to index.html
 					flash[:notice] = nil
-					redirect_to sellers_path
+					session[:user_id] = @seller.id.to_s
+					redirect_to items_path
 				else
 					# if not successful go back to new page to reenter the data again
 					# flash[:notice] = "This User Name is already used by someone else.  Please choose another User Name."
