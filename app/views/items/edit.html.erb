@@ -2,6 +2,12 @@
 
 <h3 id="tenstore">The Ten Dollar Store </h3>
 
+<ul>
+    <% @item.errors.full_messages.each do |msg| %>
+        <li> <%= msg %></li>
+    <% end %>
+</ul><br><br>
+
 <h2 id="title">Edit <%= @item.item_tag%></h2><br><br>
 
 <% if flash[:notice] %>

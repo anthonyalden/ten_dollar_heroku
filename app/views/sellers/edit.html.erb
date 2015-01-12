@@ -2,6 +2,11 @@
 
 <h3 id="tenstore">The Ten Dollar Store </h3>
 
+<ul>
+    <% @seller.errors.full_messages.each do |msg| %>
+        <li> <%= msg %></li>
+    <% end %>
+</ul>
 
 <h1 id="title">Edit <%= @seller.username %></h1>
 

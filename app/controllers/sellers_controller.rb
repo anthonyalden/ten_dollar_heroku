@@ -30,7 +30,7 @@ class SellersController < ApplicationController
 					redirect_to sellers_path
 				else
 					# if not successful go back to new page to reenter the data again
-					flash[:notice] = "This User Name is already used by someone else.  Please choose another User Name."
+					# flash[:notice] = "This User Name is already used by someone else.  Please choose another User Name."
 					render "new"
 				end
 	end
@@ -48,9 +48,9 @@ class SellersController < ApplicationController
 		@seller = Seller.find(params[:id])
 
 		if @seller.update_attributes(seller_params)
-			redirect_to sellers_path
+			redirect_to items_path
 		else
-			flash[:notice] = "This User Name is already used by someone else.  Please choose another User Name."
+			#flash[:notice] = "This User Name is already used by someone else.  Please choose another User Name."
 			render "edit"
 		end
 	end

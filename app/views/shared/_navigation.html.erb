@@ -1,8 +1,8 @@
 <% if logged_in? %>
 	<nav>
 	  <%= link_to "Edit Account", edit_seller_path(current_user) %>
-	  <%= link_to "Display All Items", items_path %>
-	  <%= link_to "Seller's Items", current_user %>
+	  <%= link_to "Display All Seller Items", items_path %>
+	  <%= link_to "Seller's Items Listing", current_user %>
 	  <%= link_to "New Item", new_item_path %>
 	</nav>
 <%end %>
