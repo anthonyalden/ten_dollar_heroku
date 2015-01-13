@@ -40,10 +40,8 @@ class ItemsController < ApplicationController
 		@item =current_user.items.new(item_params)
 		
 		if @item.save
-		   flash[:alert] = nil
 		   redirect_to items_path
 		else
-			flash[:alert] = "Item price must be $10 or less.  Please enter a new price."
 			render "new"
 		end
 		
@@ -65,10 +63,8 @@ class ItemsController < ApplicationController
 		# this retrieves a specific item from database
 		@item = Item.find(params[:id])
 		if @item.update_attributes(item_params)
-		   flash[:notice] = nil
 		   redirect_to items_path
 		else
-			flash[:notice] = "Item price must be $10 or less.  Please enter a new price."
 			render "edit"
 		end
 		

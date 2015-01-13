@@ -1,44 +1,46 @@
 
-
+<div class="item-margin">
     <% if @item.image.url != nil %>
-        <%= image_tag @item.image.url, size: "100x100" %><br><br>
+        <%= image_tag @item.image.url, size: "100x75" %><br><br>
     <% end %>
-<%= form_for @item do |f| %>
-      <div>
+    <%= form_for @item do |f| %>
+          <div>
 
 
-        <%= f.label :price %>:
-        <%= f.text_field :price%><br><br>
-        
-        <%= f.label :item_tag, "Item" %>:
-        <%= f.text_area :item_tag , size: "35x3" %><br><br>
+            <%= f.label :price %>:
+            <%= f.text_field :price%><br><br>
+            
+            <%= f.label :item_tag, "Item" %>:
+            <%= f.text_area :item_tag , size: "35x3" %><br><br>
 
-        <%= f.label :description %>:
-        <%= f.text_area :description, size: "35x3" %><br><br>
+            <%= f.label :description %>:
+            <%= f.text_area :description, size: "35x3" %><br><br>
 
-        <%#= f.label :category %>
-        <%#= f.text_field :category %>
+            <%#= f.label :category %>
+            <%#= f.text_field :category %>
 
-        <%#= f.label :search_tags %>
-        <%#= f.text_field :search_tags %>
+            <%#= f.label :search_tags %>
+            <%#= f.text_field :search_tags %>
 
-        <%= f.label :shipping_cost %>:
-        <%= f.text_field :shipping_cost %><br><br>  
+            <%= f.label :shipping_cost %>:
+            <%= f.text_field :shipping_cost %><br><br>  
 
-        <%= f.label :username %>:
-        
+            <%= f.label :username %>:
+            
 
-        <%= f.file_field :image %>
-      </div>
-      
+            <%= f.file_field :image %>
+          </div>
+          
 
-      <div>
-        <%= link_to "Cancel", items_path, {:style=>'color:blue;', :class => "css_class"}%>
-        <%= f.submit %>  
+          <div>
+            <%= link_to "Cancel", items_path, {:style=>'color:blue;', :class => "css_class"}%>
+            <%= f.submit %>  
 
-      </div>
+          </div>
 
   
-<% end %> 
+    <% end %> 
+
+</div>
 
 

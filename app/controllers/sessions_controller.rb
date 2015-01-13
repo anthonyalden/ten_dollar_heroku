@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = seller.id.to_s 
 			redirect_to seller_path(seller.id) 
 		else 
+			flash[:notice] = "Invalid Username/Password"
 			redirect_to items_path
 
 		end

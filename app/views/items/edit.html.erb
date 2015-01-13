@@ -2,21 +2,19 @@
 
 <h3 id="tenstore">The Ten Dollar Store </h3>
 
-<ul>
-    <% @item.errors.full_messages.each do |msg| %>
-        <li> <%= msg %></li>
-    <% end %>
-</ul><br><br>
+<div class="item-margin"
+		<ul>
+		    <% @item.errors.full_messages.each do |msg| %>
+		        <li> <%= msg %></li>
+		    <% end %>
+		</ul><br><br>
 
-<h2 id="title">Edit <%= @item.item_tag%></h2><br><br>
-
-<% if flash[:notice] %>
-    <br><div class = "flash_msg"><%= flash[:notice] %></div>
-<% end %>
+		<h2 id="title">Edit <%= @item.item_tag%></h2><br><br>
 
 
-<%= render "items/form", object: @item %>
+		<%= render "items/form", object: @item %>
 
 
-<h3><%= link_to "Delete #{@item.item_tag}", item_path(@item), method: :delete, data: {confirm: "Are you sure you want to delete #{@item.item_tag}?"} %></h3>
+		<h3><%= link_to "Delete #{@item.item_tag}", item_path(@item), method: :delete, data: {confirm: "Are you sure you want to delete #{@item.item_tag}?"} %></h3>
+</div>
 

@@ -11,31 +11,37 @@
     <%= f.submit 'Log In' %>
   <% end %>
 </div>
+<% if flash[:notice] %>
+    <br><div class = "flash_msg"><%= flash[:notice] %></div>
+<% end %>
 <h3 id="tenstore">The Ten Dollar Store </h3>
 
-<%= form_tag({controller: "items", action: "index"}, method: "get") do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q, nil, :size=>100) %>
-    <%= submit_tag("Search") %>
-<% end %><br>
-<h4 id="search-msg">Leave search box empty and press <b>Search</b> to display all items for sale.</h4><br>
+<div class="item-margin">
 
-<h3 id="title">Items for Sale:</h3>
+    <%= form_tag({controller: "items", action: "index"}, method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q, nil, :size=>100) %>
+        <%= submit_tag("Search") %>
+    <% end %><br>
+    <h4 id="search-msg">Leave search box empty and press <b>Search</b> to display all items for sale.</h4><br>
+
+    <h3 id="title">Items for Sale:</h3>
 
 
 
-<ul>
-  <% @items.each do |item| %>
-    <li>
-      
-      <b>Price:</b> <%= number_to_currency(item.price) %>
-      <div class="item-width"><b>Item Tag:</b> <%= link_to item.item_tag, item %> </div>
-      <div class="item-width"><b>description:</b> <%= item.description %> <br></div>
-      
-      <b>Shipping Cost:</b> <%= number_to_currency(item.shipping_cost) %><br><br>
-      <% if item.image.url != nil %>
-          <%= image_tag item.image.url, size: "100x75"%><br><br>
+    <ul>
+      <% @items.each do |item| %>
+        <li>
+          
+          <b>Price:</b> <%= number_to_currency(item.price) %>
+          <div class="item-width"><b>Item Tag:</b> <%= link_to item.item_tag, item %> </div>
+          <div class="item-width"><b>description:</b> <%= item.description %> <br></div>
+          
+          <b>Shipping Cost:</b> <%= number_to_currency(item.shipping_cost) %><br><br>
+          <% if item.image.url != nil %>
+              <%= image_tag item.image.url, size: "100x75"%><br><br>
+          <% end %>
+        </li><br>
       <% end %>
-    </li><br>
-  <% end %>
-</ul>
+    </ul>
+</div>

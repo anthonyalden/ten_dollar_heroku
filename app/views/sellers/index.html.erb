@@ -2,20 +2,22 @@
 
 <h3 id="tenstore">The Ten Dollar Store </h3>
 
-<% if logged_in? %>
-		<h2 id="title">Seller: <%=  current_user.first_name %>  <%=  current_user.last_name %></h2><br><br>
+<div class="item-margin">
+		<% if logged_in? %>
+				<h2 id="title">Seller: <%=  current_user.first_name %>  <%=  current_user.last_name %></h2><br><br>
 
-		<ul>
-		  
-		    <li>
-		      <%= current_user.first_name %>
-		      <%= current_user.last_name %>
-		      <%= link_to current_user.username, current_user %>
+				<ul>
+				  
+				    <li>
+				      <%= current_user.first_name %>
+				      <%= current_user.last_name %>
+				      <%= link_to current_user.username, current_user %>
 
-		    </li>
-		 
-		</ul>
+				    </li>
+				 
+				</ul>
 
-<% end %>
+		<% end %>
 
-<%= link_to "Return to Items List", items_path, {:style=>'color:black;', :class => "css_class"} %>
+		<%= link_to "Return to Items List", items_path, {:style=>'color:black;', :class => "css_class"} %>
+</div>

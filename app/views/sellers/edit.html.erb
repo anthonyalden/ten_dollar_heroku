@@ -2,19 +2,21 @@
 
 <h3 id="tenstore">The Ten Dollar Store </h3>
 
-<ul>
-    <% @seller.errors.full_messages.each do |msg| %>
-        <li> <%= msg %></li>
-    <% end %>
-</ul>
+<div class="item-margin">
+		<ul>
+		    <% @seller.errors.full_messages.each do |msg| %>
+		        <li> <%= msg %></li>
+		    <% end %>
+		</ul>
 
-<h1 id="title">Edit <%= @seller.username %></h1>
+		<h1 id="title">Edit <%= @seller.username %></h1>
 
-<% if flash[:notice] %>
-    <div class = "flash_msg"><%= flash[:notice] %></div>
-<% end %>
+		<% if flash[:notice] %>
+		    <div class = "flash_msg"><%= flash[:notice] %></div>
+		<% end %>
 
-<%= render "sellers/form", object: @seller %>
+		<%= render "sellers/form", object: @seller %>
 
-<%= link_to "Delete #{@seller.first_name} #{@seller.last_name}", seller_path(@seller), method: :delete, data: {confirm: "Are you sure you want to delete #{@seller.username}?"} %><br><br>
+		<%= link_to "Delete #{@seller.first_name} #{@seller.last_name}", seller_path(@seller), method: :delete, data: {confirm: "Are you sure you want to delete #{@seller.username}?"} %><br><br>
+</div>
 
