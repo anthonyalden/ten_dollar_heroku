@@ -1,0 +1,133 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+@import url(http://fonts.googleapis.com/css?family=Rock+Salt);
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+/* line 20, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+form div {
+  margin: 1em 0;
+}
+
+/* line 24, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+body {
+  font-family: 'Oxygen' Helvetica, sans-serif;
+  margin: 0;
+  background: -webkit-repeating-radial-gradient(#eff70a, #a19443);
+}
+
+/* line 34, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.login {
+  position: relative;
+  float: right;
+  font-size: 13px;
+  top: -40px;
+  margin-right: 30px;
+}
+
+/*comment*/
+/* line 42, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.bill {
+  background-image: url("https://s3-us-west-1.amazonaws.com/carrierwave-tony/uploads/item/image/ten_dollar_bill.jpg?X-Amz-Date=20150113T054021Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=08cf5c26ec6b2808642accb43206af108343d4f16f3fca910ede018bed29f9cb&X-Amz-Credential=ASIAJN22S3LQRIW3JDSA/20150113/us-west-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEJf//////////wEagAIaEO0VRhqEYc/yeWf5npEc/qckeDFksy646PonKb8L9tW%2B39kKb1J1jqO9Xrl0U2KEZEUQhzOMHHqmnwYVOGumO2ygspHOCJvPYsVlTuZlXqwyPSYg/Q3aJqToefKYUVQ2pNFh%2B4xBfxDXzKcYjspzfivoGkfW0EJJQg/zwGAsKqVnvBXOYPp/C9Cw5yIb2HO8XFu%2BOvwz0QJlbIGXibH1QODXMOMt/USB8Seemld9mTthRFN9d6cqvLuHFQeRCRq0ZQMPHGB2sPsIHflJO1UjCVTVDZJkA9RtNngbPlJOrgdl0oe6TQQewcF/gMKzQOlwFs3FTdFpnYRqP/OVe/M5IIWG0aUF");
+  background-repeat: no-repeat;
+  background-size: 300px;
+  height: 125px;
+  width: 300px;
+  box-shadow: 10px 10px 5px #5E5959;
+  -webkit-box-shadow: 10px 10px 5px #5E5959;
+  position: relative;
+  margin-left: 465px;
+  margin-bottom: -85px;
+  clip: border-box;
+  transition: background-size 1.2s;
+  -webkit-transition: background-size 1.5s;
+  transition-timing-function: cubic-bezier(0.07, 1.41, 0.82, 1.41);
+}
+
+/* line 62, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.menu {
+  height: 45px;
+  width: 100%;
+  background-color: beige;
+  position: relative;
+}
+
+/* line 72, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.menu a {
+  margin: 0 0 0 20px;
+}
+
+/* line 77, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.menu-item {
+  text-decoration: none;
+}
+
+/* line 82, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+div:hover {
+  background-size: 400px;
+}
+
+/* line 87, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.flash_msg {
+  display: inline;
+  font-size: 25px;
+  color: blue;
+}
+
+/* line 92, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.item-margin {
+  margin-left: 40px;
+}
+
+/* line 95, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+:link {
+  color: purple;
+}
+
+/* line 99, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+#tenstore {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 485px;
+  font-family: "Rock Salt";
+}
+
+/* line 107, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+#title {
+  margin-top: -20px;
+  margin-bottom: -10px;
+}
+
+/* line 113, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+#search-msg {
+  color: blue;
+  text-indent: 80px;
+  margin-top: -2px;
+}
+
+/* line 120, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+#image-show {
+  margin-left: 40px;
+}
+
+/* line 124, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.item-width {
+  width: 75%;
+}
+
+/* line 128, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.field_with_errors {
+  display: inline-block;
+  margin: 0px;
+}
