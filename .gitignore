@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 
-# Ignore application configuration
+# Ignore application configuration changed on 1-12-15
 /config/application.yml
