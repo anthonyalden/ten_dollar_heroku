@@ -25,9 +25,9 @@ form div {
 body {
 	font-family: 'Oxygen' Helvetica, sans-serif;
 	margin: 0;
-	  
+	width: 100%;
 	background: -webkit-repeating-radial-gradient(#EFF70A, #A19443);
-	
+	padding-bottom: 50px;
     
 
 }
@@ -134,6 +134,10 @@ div:hover {
 
 }
 
+#title-items-show{
+	text-align: center;
+}
+
 /* used for message under search box to tell user to press search buttom  for empty search box*/
 #search-msg{
 	color: #807C13;
@@ -145,12 +149,20 @@ div:hover {
 /* used to move images to the left and their assoicated text block*/
 #image-show{
 	margin-left: 40px;
+	max-height: 300px;
 }
 
 /* used to set width of item and descriptions so they don't go to end of row */
 .item-width{
-	width: 300px;
+	max-width: 300px;
 }
+
+/*#items-show{
+
+	display: inline;
+	
+	
+}*/
 
 
 /*.field_with_errors{
@@ -161,5 +173,28 @@ div:hover {
 .batch-items{
 	display: inline-block;
 	margin-right: 80px;
+}
+
+.items-block{
+	display: inline-block;
+	width: 44%;
+
+}
+
+.right-side-items{
+	margin-right: 40px;
+	top: -50px;
+	text-align: left;
+}
+
+.left-side-items{
+	
+}
+
+#item-show{
+
+	max-width: 1100px;
+	margin: 0 auto;
+	text-align: center;
 }
 
