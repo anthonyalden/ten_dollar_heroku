@@ -7,11 +7,13 @@
 		<h2 id="title">New Seller</h2>
 		
 		<ul>
+			<!-- prints error messages from validation rules in model -->
 		    <% @seller.errors.full_messages.each do |msg| %>
 		        <li> <%= msg %></li>
 		    <% end %>
 		</ul>
 
+		<!-- prints message if new user chooses username already in use -->
 		<% if flash[:notice] %>
 		    <div class = "flash_msg"><%= flash[:notice] %></div>
 		  <% end %>

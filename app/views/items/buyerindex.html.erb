@@ -10,12 +10,13 @@
       <%= f.password_field :password %>
       <%= f.submit 'Log In' %>
     <% end %>
+    
     <div class="notice">
         <% if flash[:notice] %>
             <br><div class = "flash_msg"><%= flash[:notice] %></div>
         <% end %>
     </div>
-  
+
 </div>
 
 
@@ -29,6 +30,7 @@
         <%= text_field_tag(:q, nil, :size=>100) %>
         <%= submit_tag("Search") %>
     <% end %><br>
+    
     <h4 id="search-msg">Leave search box empty and press <b>Search</b> to display all items for sale.</h4><br>
 
     <h3 id="title">Items for Sale:</h3>
@@ -57,7 +59,7 @@
                   </div>  
                   
                 <% end %>
-
+                <!-- set width and shading of line between item groups -->
                 <hr size ="8px" noshade />
               <% end %>
               </ul>

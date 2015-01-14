@@ -5,12 +5,12 @@ class ItemsController < ApplicationController
 
 	def index
 
-	      
+	      # condtionally render buyers page or sellers page depending if 
+	      # 	seller is logged in index is seller page buyers index is buyers page
 		  if logged_in? == false
 		  	@items = Item.where({ :$or => [ { :description => /.*#{params[:q]}.*/i }, { :item_tag => /.*#{params[:q]}.*/i } ] })
 		  	render "buyerindex"
 		  else
-		  	# @items = current_user.items.where(:description => /.*#{params[:q]}.*/i $or :item_tag => /.*#{params[:q]}.*/i)
 		  	@items = current_user.items.where({ :$or => [ { :description => /.*#{params[:q]}.*/i }, { :item_tag => /.*#{params[:q]}.*/i } ] })
 		  	render "index"
 		  end
@@ -18,41 +18,30 @@ class ItemsController < ApplicationController
 	end
 
 	def show
-		# retrieves ONE specific bean in our database
-		# the parms refers to rails object with a key and object hash.  one of the hashes is an :id key.
-		#       :id comes from the url specifically the part that has the id specified in the routes
-		# Bean is our model
-		# .find is method available to our Bean model it comes from mongoid gem
 		@item = Item.find(params[:id])
 	end
 
 	def new
-		# this makes a new one
+		# set flash message to disappear if it was displayed earlier
 		flash[:alert] = nil
 		@item = Item.new
 	end
 
 	def create
-		#the params object has some methods like .requre and .permit.  The permit says what attributes can be saved
-		# :item is from the model
-		# @item = item.new(params.require(:item).permit(:name, :roast, :origin, :quantity))
-		#@item = Item.new (item_params)
+		
 		@item =current_user.items.new(item_params)
 		
 		if @item.save
+			# display item index page for seller after new items is created
 		   redirect_to items_path
 		else
 			render "new"
 		end
-		
-		
-			# if not successful go back to new page to reenter the data again
 			
 	end
 
 	def edit
-		# action for retrieving a specific been
-		# this is the same code you use for the show action
+		# reset flash notice to not display from pervious display of notice
 		flash[:notice] = nil
 		@item = Item.find(params[:id])
 		@seller = Seller.new.username
@@ -60,9 +49,10 @@ class ItemsController < ApplicationController
 	end
 
 	def update
-		# this retrieves a specific item from database
+		
 		@item = Item.find(params[:id])
 		if @item.update_attributes(item_params)
+			# display item index page for seller after existing item is updated
 		   redirect_to items_path
 		else
 			render "edit"
@@ -73,12 +63,13 @@ class ItemsController < ApplicationController
 	def destroy
 		@item = Item.find(params[:id])
 		@item.destroy
+		# display item index page for seller after item is deleted
 		redirect_to items_path
 	end
 
 
 private
-# anyting in this private area 
+ 
 	def item_params
 		params.require(:item).permit(:price, :item_tag, :description, :photo, :category, :search_tags, :shipping_cost, :sold, :seller, :username, :image)
 	end

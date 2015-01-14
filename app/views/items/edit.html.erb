@@ -2,8 +2,9 @@
 
 <h3 id="tenstore">The Ten Dollar Store </h3>
 
-<div class="item-margin"
+<div class="item-margin">
 		<ul>
+		<!-- prints error messages from validation rules in model -->
 		    <% @item.errors.full_messages.each do |msg| %>
 		        <li> <%= msg %></li>
 		    <% end %>

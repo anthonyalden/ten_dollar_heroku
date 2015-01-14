@@ -1,74 +1,78 @@
 class SellersController < ApplicationController
 	def index
-		# retrieves ALL the beans in our database
 		@sellers =Seller.all
 		
 	end
 
 	def show
-		# retrieves ONE specific seller in our database
-		# the parms refers to rails object with a key and object hash.  one of the hashes is an :id key.
-		#       :id comes from the url specifically the part that has the id specified in the routes
-		# Seller is our model
-		# .find is method available to our Seller model it comes from mongoid gem
+		
 		@seller = Seller.find(params[:id])
 	end
 
 	def new
-		# this makes a new one
+		# cuases flash message to turn off from prior display
 		flash[:notice] = nil
 		@seller = Seller.new
 	end
 
 	def create
-		#the params object has some methods like .requre and .permit.  The permit says what attributes can be saved
-		# :seller is from the model
+		
 				@seller = Seller.new (seller_params)
+				# downcase username so all usernames are stored lowercase
+				# later on when username is entered to login it is also downcased
+				# this lets a user enter upper and lower case usernames and makes
+				# the username not case sensitive
 				@seller.username = @seller.username.downcase
 				if @seller.save 
-					# if save is ok go back to index.html
+					
+					# reset flash notice if it was displayed earlier
 					flash[:notice] = nil
 					session[:user_id] = @seller.id.to_s
+					# display sellers item index page after new user is created
+					#  logged in.
 					redirect_to items_path
 				else
-					# if not successful go back to new page to reenter the data again
-					# flash[:notice] = "This User Name is already used by someone else.  Please choose another User Name."
 					render "new"
 				end
 	end
 
 	def edit
-		# action for retrieving a specific Seller
-		# this is the same code you use for the show action
+		# reset flash notice if it was displayed earlier
 		flash[:notice] = nil
 		@seller = Seller.find(params[:id])
 
 	end
 
 	def update
-		# this retrieves a specific seller from database
+	
 		@seller = Seller.find(params[:id])
+		# downcase username when edited so it is stored in lowercase
+		#   this makes the username case insensitve
 		@seller.username = @seller.username.downcase
 		if @seller.update_attributes(seller_params)
+			# return to the sellers item index page after update to user info
 			redirect_to items_path
 		else
-			#flash[:notice] = "This User Name is already used by someone else.  Please choose another User Name."
 			render "edit"
 		end
 	end
 
 	def destroy
 		@seller = Seller.find(params[:id])
+		# find all existing items user created and delete them as part of
+		#    deleting the user
 		@items = Item.where(:seller_id => current_user)
 		@items.destroy
+		# cancel the session for the user
 		session.delete(:user_id)
 		@seller.destroy
+		# display the user buyerindex page after the user is deleted
 		redirect_to items_path
 	end
 
 
 private
-# anyting in this private area is only visible to this class
+
 	def seller_params
 		params.require(:seller).permit(:username, :password, :first_name, :last_name, :phone, :email, :password)
 	end

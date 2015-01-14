@@ -4,6 +4,7 @@
 
 <div class="item-margin">
 		<ul>
+			<!-- prints error messages from validation rules in model -->
 		    <% @seller.errors.full_messages.each do |msg| %>
 		        <li> <%= msg %></li>
 		    <% end %>
@@ -11,6 +12,7 @@
 
 		<h1 id="title">Edit <%= @seller.username %></h1>
 
+		<!-- error message if existing user chooses new username already in use  -->
 		<% if flash[:notice] %>
 		    <div class = "flash_msg"><%= flash[:notice] %></div>
 		<% end %>
