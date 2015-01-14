@@ -43,11 +43,11 @@
                   <div class="batch-items" > 
                       <li>
 
-                        <b>Price:</b> <%= number_to_currency(item.price) %>
+                        <b>Price:</b> <%= number_to_currency(item.price) %><br>
                         
-                        <div class="item-width"><b>Item:</b> <%= link_to item.item_tag, item %><div> 
+                        <div class="item-width"><b>Item:</b> <%= link_to item.item_tag, item %><div> <br>
                         
-                        <div class="item-width"><b>description:</b> <%= item.description %> <br></div>
+                        <div class="item-width"><b>description:</b> <%= item.description %> <br></div><br>
                   
                         <b>Shipping Cost:</b> <%= number_to_currency(item.shipping_cost) %><br><br>
                         <% if item.image.url != nil %>
