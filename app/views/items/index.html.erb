@@ -25,22 +25,30 @@
 
           <% if logged_in? %>
               <ul>
+              <% @items.each_slice(3) do |batch| %>
+                <% batch.each do |item| %>
+                  <div class="batch-items" > 
+                      <li>
 
-                <% @items.each do |item| %>
-                  <li>
+                        <b>Price:</b> <%= number_to_currency(item.price) %>
+                        
+                        <div class="item-width"><b>Item:</b> <%= link_to item.item_tag, item %><div> 
+                        
+                        <div class="item-width"><b>description:</b> <%= item.description %> <br></div>
+                  
+                        <b>Shipping Cost:</b> <%= number_to_currency(item.shipping_cost) %><br><br>
+                        <% if item.image.url != nil %>
+                            <%= image_tag item.image.url, size: "100x75"%><br><br>
+                        <% end %> 
 
-                    <b>Price:</b> <%= number_to_currency(item.price) %>
-                    <div class="item-width"><b>Item:</b> <%= link_to item.item_tag, item %><div> 
-                    <div class="item-width"><b>description:</b> <%= item.description %> <br></div>
-                    
-                    
-                    <b>Shipping Cost:</b> <%= number_to_currency(item.shipping_cost) %><br><br>
-                    <% if item.image.url != nil %>
-                        <%= image_tag item.image.url, size: "100x75"%><br><br>
-                    <% end %>  
-                  </li>
-                  <hr size ="8px" noshade />
+                      </li>
+
+                  </div>  
+                  
                 <% end %>
+
+                <hr size ="8px" noshade />
+              <% end %>
               </ul>
 
             <% end %>
