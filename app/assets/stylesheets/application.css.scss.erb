@@ -20,6 +20,8 @@ form div {
   margin: 1em 0;
 }
 
+/* set background color and default font-family for all pages overide 
+		margin default by set to 0 */
 body {
 	font-family: 'Oxygen' Helvetica, sans-serif;
 	margin: 0;
@@ -37,7 +39,7 @@ body {
 	top: -40px;
 	margin-right: 30px;
 }
-/*comment*/
+/* used to make ten dollar bill animate and shadow */
 .bill{
 	background-image: url("https://s3-us-west-1.amazonaws.com/carrierwave-tony/ten_dollar_bill.jpg");
 	background-repeat: no-repeat;
@@ -58,43 +60,63 @@ body {
    
 }
 
-.menu {
-	height: 45px;
+/* used to style menu bar */
+nav.menu {
+	height: 55px;
 	width: 100%;
 	background-color: beige;
 	position: relative;
 	
-
+	a
+	{
+		margin: 0 0 0 20px;
+		/* centers menu items in menu bar*/
+		top: 17px;
+		position: relative;
+		text-decoration: none;
+		background-color: #E8E680;
+		padding: 10px;
+		border-radius: 10px;
+	}
 
 }
 
-.menu a{
-
-	margin: 0 0 0 20px;
-}
-
+/* used to style menus in shared/_navigation */
 .menu-item{
-	text-decoration: none;
+	position: relative;
 
 }
 
+/*used to make ten dollar bill image shrink when hover over it*/
 div:hover {
     background-size: 400px;
 
 }
 
+.notice{
+	float: right;
+	margin-right: 40px;
+}
+
+/*used to style flash messages*/
 .flash_msg{
 	display: inline;
 	font-size: 25px;
 	color: blue;
 }
+
+/* used to space all text on all pages so the are not hitting the left page edge*/
 .item-margin{
+
 	margin-left: 40px;
+
 }
+
 :link{
 	color: purple;
 }
 
+/* title below the ten dollar bill image*/
 #tenstore{
 	position: relative;
 	margin-top: 100px;
@@ -103,28 +125,34 @@ div:hover {
 	font-family: 'Rock Salt'
 }
 
+/* used for various headings throughout*/
 #title {
 	margin-top: -20px;
 	margin-bottom: -10px;
 
 }
 
+/* used for message under search box to tell user to press search buttom  for empty search box*/
 #search-msg{
-	color: blue;
+	color: #807C13;
 	text-indent: 80px;
 	margin-top: -2px;
 
 }
 
+/* used to move images to the left and their assoicated text block*/
 #image-show{
 	margin-left: 40px;
 }
 
+/* used to set width of item and descriptions so they don't go to end of row */
 .item-width{
 	width: 75%;
 }
 
-.field_with_errors{
+
+/*.field_with_errors{
 	display: inline-block;
 	margin: 0px;
-}
+}*/
+
