@@ -1,0 +1,161 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+@import url(http://fonts.googleapis.com/css?family=Rock+Salt);
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+/* line 20, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+form div {
+  margin: 1em 0;
+}
+
+/* set background color and default font-family for all pages overide 
+		margin default by set to 0 */
+/* line 26, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+body {
+  font-family: 'Oxygen' Helvetica, sans-serif;
+  margin: 0;
+  background: -webkit-repeating-radial-gradient(#eff70a, #a19443);
+}
+
+/* line 36, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.login {
+  position: relative;
+  float: right;
+  font-size: 13px;
+  top: -40px;
+  margin-right: 30px;
+}
+
+/* used to make ten dollar bill animate and shadow */
+/* line 44, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.bill {
+  background-image: url("https://s3-us-west-1.amazonaws.com/carrierwave-tony/ten_dollar_bill.jpg");
+  background-repeat: no-repeat;
+  background-size: 300px;
+  height: 125px;
+  width: 300px;
+  box-shadow: 10px 10px 5px #5E5959;
+  -webkit-box-shadow: 10px 10px 5px #5E5959;
+  position: relative;
+  margin-left: 400px;
+  margin-bottom: -85px;
+  clip: border-box;
+  transition: background-size 1.2s;
+  -webkit-transition: background-size 1.5s;
+  transition-timing-function: cubic-bezier(0.07, 1.41, 0.82, 1.41);
+}
+
+/* title below the ten dollar bill image*/
+/* line 65, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+#tenstore {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 425px;
+  font-family: "Rock Salt";
+}
+
+/* used to style menu bar */
+/* line 74, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+nav.menu {
+  height: 55px;
+  width: 100%;
+  background-color: beige;
+  position: relative;
+}
+/* line 81, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+nav.menu a {
+  margin: 0 0 0 20px;
+  /* centers menu items in menu bar*/
+  top: 17px;
+  position: relative;
+  text-decoration: none;
+  background-color: #E8E680;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* used to style menus in shared/_navigation */
+/* line 95, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.menu-item {
+  position: relative;
+}
+
+/*used to make ten dollar bill image shrink when hover over it*/
+/* line 101, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+div:hover {
+  background-size: 400px;
+}
+
+/* line 106, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.notice {
+  float: right;
+  margin-right: 40px;
+}
+
+/*used to style flash messages*/
+/* line 112, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.flash_msg {
+  display: inline;
+  font-size: 25px;
+  color: blue;
+}
+
+/* used to space all text on all pages so the are not hitting the left page edge*/
+/* line 119, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.item-margin {
+  margin-left: 40px;
+}
+
+/* line 125, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+:link {
+  color: purple;
+}
+
+/* used for various headings throughout*/
+/* line 132, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+#title {
+  margin-top: -20px;
+  margin-bottom: -10px;
+}
+
+/* used for message under search box to tell user to press search buttom  for empty search box*/
+/* line 139, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+#search-msg {
+  color: #807C13;
+  text-indent: 80px;
+  margin-top: -2px;
+}
+
+/* used to move images to the left and their assoicated text block*/
+/* line 147, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+#image-show {
+  margin-left: 40px;
+}
+
+/* used to set width of item and descriptions so they don't go to end of row */
+/* line 152, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.item-width {
+  width: 300px;
+}
+
+/*.field_with_errors{
+	display: inline-block;
+	margin: 0px;
+}*/
+/* line 162, /Users/anthonyalden/wdi/tendollarheroku/app/assets/stylesheets/application.css.scss.erb */
+.batch-items {
+  display: inline-block;
+  margin-right: 80px;
+}
