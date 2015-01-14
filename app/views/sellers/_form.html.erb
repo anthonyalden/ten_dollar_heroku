@@ -1,7 +1,7 @@
       
 <div class="item-margin">
       <%= form_for @seller do |f| %>
-        <div>
+        
           <%= f.label :first_name %>
           <%= f.text_field :first_name %>
 
@@ -14,16 +14,16 @@
           <%= f.label :email %>
           <%= f.text_field :email, size: "50px" %><br><br>
 
-          <%= f.label "User Name"%>
+          <%= f.label "User Name" %>
           <%= f.text_field :username, size: "30px" %>
 
-          <%= f.label :password %> 
+          <%= f.label :password, class: "form"%> 
           <%= f.password_field :password, size: "30px" %>
-
-        </div>
+         
+        
         <div>
           <%= f.submit %> <br><br>
-          <%= link_to "Cancel", items_path , {:style=>'color:blue;', :class => "css_class"} %>
+          <%= link_to "Cancel", items_path, {:style=>'color:blue;', :class => "css_class"} %>
         </div>
       <% end %>
 </div>

@@ -124,6 +124,7 @@ div:hover {
 
 	margin-left: 40px;
 
+
 }
 
 /* style the links throught all pages */
@@ -204,5 +205,11 @@ div:hover {
 	max-width: 1100px;
 	margin: 0 auto;
 	text-align: center;
+}
+
+/* overide rails field_with_errors so that it is inline 
+  this keeps forms from breaking apart when validiation error occur */
+.field_with_errors {
+	display: inline;
 }
 
