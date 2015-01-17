@@ -1,6 +1,7 @@
 
 <div class="bill"></div>
   
+<!-- loing fields (boxex) on buyers screen -->
 <div class="login">
     <%= form_for :login, url: '/login' do |f| %>
 
@@ -25,6 +26,7 @@
 
 <div class="item-margin">
 
+    <!-- handles item searching -->
     <%= form_tag({controller: "items", action: "index"}, method: "get") do %>
         <%= label_tag(:q, "Search for:") %>
         <%= text_field_tag(:q, nil, :size=>100) %>
@@ -38,6 +40,7 @@
 
 
     <ul>
+              <!-- slice allows three items to be dispalyed in a row -->
               <% @items.each_slice(3) do |batch| %>
                 <% batch.each do |item| %>
                   <div class="batch-items" > 
@@ -59,7 +62,7 @@
                   </div>  
                   
                 <% end %>
-                <!-- set width and shading of line between item groups -->
+                <!-- display a line between each group of three items and set width and shading of line between item groups -->
                 <hr size ="8px" noshade />
               <% end %>
               </ul>
